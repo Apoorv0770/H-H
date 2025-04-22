@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>PG & Mess Listings - H&H Homestays</title>
-
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/animate.css">
@@ -39,9 +38,6 @@
             <li class="nav-item">
               <a class="nav-link" href="newfeedback.html">Feedback</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="blog.html">Blog</a>
-            </li>
             <li class="nav-item cta">
               <a class="nav-link" href="newaddpg.html"><span>Add Homestay</span></a>
             </li>
@@ -50,7 +46,7 @@
       </div>
     </nav>
   </header>
-
+ 
   <section class="site-hero site-hero-innerpage overlay" data-stellar-background-ratio="0.5" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80');">
     <div class="container">
       <div class="row align-items-center site-hero-inner justify-content-center">
@@ -63,7 +59,6 @@
       </div>
     </div>
   </section>
-
   <section class="site-section">
     <div class="container">
       <div class="filters mb-5">
@@ -86,7 +81,6 @@
       <div class="row" id="listingContainer"></div>
     </div>
   </section>
-
   <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80');">
     <div class="container">
       <div class="row justify-content-center align-items-center intro">
@@ -97,7 +91,6 @@
       </div>
     </div>
   </section>
-
   <footer class="site-footer">
     <div class="container">
       <div class="row mb-5">
@@ -135,9 +128,7 @@
       </div>
     </div>
   </footer>
-
   <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
-
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.0.js"></script>
   <script src="js/popper.min.js"></script>
@@ -148,7 +139,6 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/magnific-popup-options.js"></script>
   <script src="js/main.js"></script>
-
   <style>
     .filters {
       display: flex;
@@ -213,7 +203,6 @@
       }
     }
   </style>
-
   <script>
     const allListings = [
       { name: 'Samruddhi Hostel', area: 'Pimpri Chinchwad', rent: 6000, gender: 'Female', mess: 'Yes', image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
@@ -230,11 +219,9 @@
       { name: 'Yash PG House', area: 'Pradhikaran', rent: 8000, gender: 'Male', mess: 'Yes', image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
       { name: 'Boys Hostel PG Ravet', area: 'Ravet', rent: 5500, gender: 'Male', mess: 'No', image: 'https://images.pexels.com/photos/2079234/pexels-photo-2079234.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' }
     ];
-
     function renderListings(listings) {
       const container = document.getElementById("listingContainer");
       container.innerHTML = "";
-
       listings.forEach(listing => {
         const div = document.createElement("div");
         div.className = "col-md-4 mb-4";
@@ -267,29 +254,23 @@
         container.appendChild(div);
       });
     }
-
     function applyFilters() {
       const area = document.getElementById("areaFilter").value.toLowerCase();
       const gender = document.getElementById("genderFilter").value;
       const mess = document.getElementById("messFilter").value;
       const rent = parseInt(document.getElementById("rentFilter").value);
       const searchQuery = document.getElementById("searchBox").value.toLowerCase();
-
       let filteredListings = allListings.filter(listing => {
         const matchesSearch = !searchQuery || listing.name.toLowerCase().includes(searchQuery);
         const matchesArea = !area || listing.area.toLowerCase().includes(area);
         const matchesGender = !gender || listing.gender.toLowerCase() === gender.toLowerCase();
         const matchesMess = !mess || listing.mess.toLowerCase() === mess.toLowerCase();
         const matchesRent = isNaN(rent) || listing.rent <= rent;
-
         return matchesSearch && matchesArea && matchesGender && matchesMess && matchesRent;
       });
-
       filteredListings.sort((a, b) => a.name.localeCompare(b.name));
-
       renderListings(filteredListings);
     }
-
     function clearFilters() {
       document.getElementById("searchBox").value = "";
       document.getElementById("areaFilter").value = "";
@@ -298,8 +279,8 @@
       document.getElementById("rentFilter").value = "";
       renderListings(allListings);
     }
-
     renderListings(allListings);
   </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'934649a75d7dda9b',t:'MTc0NTMzNzE0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
